@@ -1,0 +1,232 @@
+:root {
+    --darkerColor: #2b2626;
+    --greyColor: #d1d1d1;
+    --darkerGreyColor: #979797;
+    --whiteColor: #fff;
+    --purpleColor: #677eea;
+    --lighterPurpleColor: rgba(103,126,234,0.9);
+    --lightPink: #fce5e8;
+    --darkPink: #f66f6f;
+    --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: #eef2f5;
+    color: var(--darkerColor);
+    font-family: 'M PLUS 1', sans-serif;
+}
+
+/* nav */
+
+nav {
+    background-color: var(--whiteColor);
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+li {
+    list-style-type: none;
+    margin-top: 0.6rem;
+}
+
+.nav-memberships {
+    padding-right: 5rem;
+    color: var(--greyColor);
+}
+
+.nav-users {
+    color: var(--purpleColor);
+}
+
+.nav-memberships,
+.nav-users {
+    font-weight: 700;
+}
+
+.nav-memberships,
+.nav-users {
+    cursor: pointer;
+}
+
+/* header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-left: 6.5rem;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: capitalize;
+    margin-top: 2rem;
+}
+
+/* main card */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 3.5rem;
+    margin-top: 1rem;
+}
+
+.card {
+    height: 350px;
+    width: 1150px;
+    background-color: var(--whiteColor);
+    margin-left: 3.3rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.card-title {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+}
+
+.card-title__caption {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--darkerGreyColor);
+    padding-bottom: 2rem;
+}
+
+h5 {
+    padding-bottom: 1rem;
+}
+
+.email,
+.membership {
+    color: var(--purpleColor);
+}
+
+/* form */
+
+form {
+    padding-top: 2rem;
+}
+
+.form-header {
+    display: flex;
+}
+
+.form-align {
+    display: block;
+    justify-content: column;
+    flex-wrap: wrap;
+}
+
+
+.form-input__align {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+
+
+label {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.asterisk {
+    color: orange;
+    font-weight: 700;
+}
+
+#lastName {
+    margin-left: 2rem;
+}
+
+input {
+    width: 530px;
+    height: 30px;
+    color: var(--darkerColor);
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+    box-shadow: var(--shadow);
+    border: none;
+}
+
+.gap {
+    margin-left: 2rem;
+}
+
+select {
+    width: 250px;
+    height: 30px;
+    margin-top: 0.5rem;
+    box-shadow: var(--shadow);
+    border: none;
+    padding-left: 1rem;
+}
+
+::placeholder {
+    color: var(--greyColor);
+}
+
+.form-buttons {
+    margin-top: -1rem;
+}
+
+.form-button__right {
+    height: 40px;
+    width: 130px;
+    background-color: var(--purpleColor);
+    border: none;
+    border-radius: 5px;
+    color: var(--whiteColor);
+    margin-top: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-right: 5rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    --transition: 0.3s all ease;
+}
+
+.form-button__right:hover {
+    transition: var(--transition);
+    background-color: var(--lighterPurpleColor);
+}
+
+.form-button__left {
+    border: none;
+    padding-right: 1rem;
+    cursor: pointer;
+    background-color: var(--whiteColor);
+    font-weight: 600;
+}
+
+/* footer */
+
+footer > p {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    color: black;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}

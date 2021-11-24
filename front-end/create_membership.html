@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Membership</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="create_membership.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-memberships">
+            <ul>
+                <li><a href="#"></a>Memberships</li>
+            </ul>    
+        </div>
+        <div class="nav-users">
+            <ul>
+                <li><a href="#"></a>Users</li>
+            </ul> 
+        </div>
+    </nav>
+    <header>
+        <div class="header">
+            <div class="header-left">
+                <h1>
+                    Create Membership
+                </h1>
+            </div>
+        </div> 
+    </header>
+    <main>
+        <div class="card">
+            <div class="card-title">
+                <form>
+                <div class="form-header center">
+                    <div class="center">
+                        <label for="firstName">Name</label>
+                        <input type="text" id="firstName" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="input-icon">
+                        <label for="number">Membership Price</label>
+                        <input type="number" id="number" name="price" placeholder="Membership Price" required>
+                        <i>$</i>
+                    </div>
+                    <div class="center">
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" cols="60" rows="10" required></textarea>
+                    </div>
+                    <div class="form-buttons center">
+                        <button class="form-button__left">
+                            Cancel
+                        </button>
+                        <button  class="form-button__right" type="submit">
+                            New Membership
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>
+            Copyright &copy;2021 Membership Manager
+        </p>
+    </footer>
+    <script src="create_membership.js"></script>
+</body>
+</html>

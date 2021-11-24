@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Membership</title>
+    <link rel="stylesheet" href="create_user.css">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200&display=swap" rel="stylesheet">
+</head>
+<body>
+        <nav>
+            <div class="nav-memberships">
+                <ul>
+                    <li><a href="#"></a>Memberships</li>
+                </ul>    
+            </div>
+            <div class="nav-users">
+                <ul>
+                    <li><a href="#"></a>Users</li>
+                </ul> 
+            </div>
+        </nav>
+        <header>
+            <div class="header">
+                <div class="header-left">
+                    <h1>
+                        Create User
+                    </h1>
+                </div>
+            </div> 
+        </header>
+        <main>
+            <div class="card">
+                <div class="card-title">
+                    <form>
+                    <div class="form-header">
+                        <div class="form-input__align">
+                            <label for="firstName">First Name <span class="asterisk">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="First Name" required>
+                        </div>
+                        <div class="form-input__align gap">
+                            <label for="lastName" class="label-align">Last Name <span class="asterisk">*</span></label>
+                            <input type="text" id="surname" name="surname" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-align">
+                        <div class="form-input__align">
+                            <label for="emailAddress">Email Address <span class="asterisk">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-input__align">
+                            <label for="changeMembership">Choose Membership</label>
+                            <select name="membership" id="changeMembership">
+                                <option value="" >Choose an option</option>
+                                <option value="trial">Trial</option>
+                                <option value="silver">Silver</option>
+                                <option value="bronze">Bronze</option>
+                                <option value="gold">Gold</option>
+                                <option value="platinum">Platinum</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-buttons center">
+                        <button class="form-button__left" href="www.google.com">
+                            Cancel
+                        </button>
+                        <button  class="form-button__right">
+                            New User
+                        </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>
+                Copyright &copy;2021 Membership Manager
+            </p>
+        </footer>
+        <script src="create_user.js"></script>
+    </body>
+</html>
