@@ -1,5 +1,12 @@
+  // nav navigation
+  const navigateToUsers = document.querySelectorAll('li')[1];
 
-    renderMemberships = async () => {
+  navigateToUsers.addEventListener('click', () => {
+      window.location.href = './user_management.html'; 
+  });
+  
+  // render dynamically created memberships
+   renderMemberships = async () => {
     const membershipsResponse = await fetch('http://localhost:3000/memberships', {method: "GET"});
     const responseJSON = await membershipsResponse.json();
 
@@ -40,52 +47,36 @@
         wrapper.append(divCard);
 
         button.addEventListener('click', () => {
-            deleteService(membershipObject.id);
+          // delete memberships on a button click
+            deleteMemberships(membershipObject.id);
             renderMemberships();
             wrapper.innerHTML = "";
-        })
-        
+        });
     });
 }
 
 renderMemberships();
 
-
-   async function deleteService(id) {
-
-        const deleteService = await fetch(
-      
-          "http://localhost:3000/memberships/" + id.toString(),
-      
+   async function deleteMemberships(id) {
+        const deleteMemberships = await fetch ("http://localhost:3000/memberships/" + id.toString(),
           {
-      
             method: "DELETE",
-      
             headers: {
-      
               "content-type": "application/json",
-      
             },
-      
           }
-      
         );
-      
-        const json = await deleteService.json();
-      
+        const json = await deleteUsers.json();
         return json;
-      
-      }
+      };
 
+
+// navigate back to create_membership.html on a cancel click event
 
 const navigateBtn = document.querySelector('#navigate');
-
 navigateBtn.addEventListener('click', () => {
     window.location.href = './create_membership.html';
 });
 
-const navigateToUsers = document.querySelectorAll('li')[1];
-navigateToUsers.addEventListener('click', () => {
-    window.location.href = './user_management.html';
-});
+
 

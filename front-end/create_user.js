@@ -37,7 +37,7 @@ newUserBtn.addEventListener('click', async (event) => {
         });
 
     window.location.href = "./user_management.html";
-
+    
 });
 
 const cancelBtn = document.querySelector('.form-button__left');

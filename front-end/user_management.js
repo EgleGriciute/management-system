@@ -1,9 +1,11 @@
+// nav navigation
 const navigateToUsers = document.querySelector('li');
 
 navigateToUsers.addEventListener('click', () => {
     window.location.href = './membership_management.html'
 });
 
+// select a button in order to create new users
 const newUserBtn = document.querySelector('#new-user');
 
 newUserBtn.addEventListener('click', () => {
@@ -16,7 +18,7 @@ renderUsers = async () => {
 
     const wrapper = document.querySelector('main');
 
-    const userElements = responseJSON.forEach((userObject) => {
+        responseJSON.forEach((userObject) => {
        const divCard = document.createElement('div');
        divCard.classList.add('card');
        
@@ -54,33 +56,22 @@ renderUsers = async () => {
         divCard.append(div);
 
         wrapper.append(divCard);
-
-    })
-}
+    });
+};
 
 renderUsers();
 
-// const sortUpBtn = document.querySelector('.fas.fa-sort-up');
-// const sortDownBtn = document.querySelector('.fas.fa-sort-down');
+// create sorting of ascending/descending
 
+const sortUpBtn = document.querySelector('.fas.fa-sort-up');
+const sortDownBtn = document.querySelector('.fas.fa-sort-down');
 
-
-// let sort = "ASC";
-
-// sortUpBtn.addEventListener("click", () => {
-//     if (sort == "ASC") {
-//         sort = "DSC";
-//         renderUsers();
-//     } else {
-//         sort == "DESC";
-//         renderUsers();
-//     }
+// sortUpBtn.addEventListener('click', () => {
+    
 // });
 
-// async function getUsers(sort) {
-//     const query = new URLSearchParams();
-//     query.set("order", sort);
-//     const response = await fetch("http://localhost:3000/users?"+query.toString());
-//     const json = await response.json();
-//     return json;
-// }
+// sortDownBtn.addEventListener('click', () => {
+
+// });
+
+

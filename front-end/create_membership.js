@@ -2,9 +2,12 @@
 const navigateToUsers = document.querySelectorAll('li')[1];
 navigateToUsers.addEventListener('click', () => {
     window.location.href = './user_management.html';
-})
+});
 
+// select a form in order to get input data
 const pageForm = document.querySelector('form');
+
+// select a button in order to create a new membership
 const newMembershipBtn = document.querySelector('.form-button__right');
 
 newMembershipBtn.addEventListener('click', async (event) => {
@@ -38,7 +41,7 @@ newMembershipBtn.addEventListener('click', async (event) => {
         window.location.href = "./membership_management.html";
     }); 
 
-// relocate the page on a cancel click
+// relocate the page back on a cancel click
 const cancelBttn = document.querySelector('.form-button__left');
 
 cancelBttn.addEventListener('click', () => {

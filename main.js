@@ -2,8 +2,6 @@ import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 import { MongoClient } from 'mongodb';
-// const mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost:27017/test');
 
 dotenv.config();
 
@@ -15,7 +13,6 @@ app.use(cors());
 app.use(express.json());
 
 const mongoClient = new MongoClient(MONGO_CONNECTION_STRING);
-
 
 // I GET
 
@@ -40,7 +37,7 @@ app.post('/memberships', async (req,res) => {
         .collection('services')
         .insertOne({
            id, name, price, description
-        })
+        });
     await connection.close();
     res.send(data);
 });
@@ -60,42 +57,26 @@ app.delete('/memberships/:id', async (req,res) => {
 });
 
 
-// // IV GET
+//  IV GET
 
 app.get('/users/:order', async (req, res) => {
+    const orderValue = req.params.order;
+    let filter = {};
+
+    if(req.query.orderValue) {
+        orderValue = req.query.orderValue === 'asc' ? 1 : -1;
+    };
+
     const connection = await mongoClient.connect();
-    let order = 1;
-    if(res.query.order) {
-        order = req.query.order === "ASC" ? 1 : -1;
-    }
-
-    const findService = await connection 
-    .db('project')
-    .collection('users')
-    .aggregate([
-        {
-            $lookup: {
-                from: 'services',
-                localField: 'service_id',
-                foreignField: 'id',
-                as: 'service',
-            },
-        },
-    ])
-    .sort({name: order})
-    .toArray();
-    const cleanUser = findService.map((user)=>{
-        return {
-            name: user.name,
-            surname: user.surname,
-            email: user.email,
-            service: user.service?.name,
-            ip: user.ip,
-        };
-    });
-    res.send(cleanUser);
+    const data = await connection
+        .db('project')
+        .collection('users')
+        .find(filter)
+        .sort({name: orderValue})
+        .toArray();
+    connection.close();
+    res.send(data);
 });
-
 
 // V POST
 
@@ -125,4 +106,4 @@ app.post('/users', async (req,res) => {
 
 app.listen(PORT, () => {
     console.log(`Server listening on port: `, PORT);
-})
+});
